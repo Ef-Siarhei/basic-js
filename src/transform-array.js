@@ -14,7 +14,6 @@ const { NotImplementedError } = require('../extensions/index.js');
  * 
  */
 function transform(arr) {
-   // throw new NotImplementedError('Not implemented');
    if (!Array.isArray(arr)) { throw new Error("'arr' parameter must be an instance of the Array!") }
    if (arr.every(el => Array.isArray(el))) {
       arr.forEach(el => transform(el));
@@ -40,7 +39,7 @@ function transform(arr) {
          // console.log(newArr);
       }
    }
-   return res = newArr.filter(el => { if (typeof el == 'number') { return el } })
+   return res = newArr.filter(el => { if (typeof el != undefined) { return el } })
 
 }
 
